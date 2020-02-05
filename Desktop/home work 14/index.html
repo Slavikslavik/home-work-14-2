@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home work 14</title>
+</head>
+	<style>
+	body{
+	  background-color: lightblue;
+	}
+
+	.box{
+	  background-color: grey;
+	  height: 150px;
+	  width: 150px;
+	  display:inline-block;
+	  overflow: auto;
+	}
+	</style>
+<body>
+	
+	  <div class="box" data-help="don`t touch"></div> 
+
+	<script>
+		//Задание 1
+		let $container = document.querySelector('.box');
+		  //console.log($container)
+		$container.addEventListener('mouseover',function(event){
+		  const $tooltip = document.createElement('div')
+		  //console.log($tooltip)
+		  $tooltip.textContent = $container.dataset.help;
+		  $container.append($tooltip);
+		})
+
+		$container.addEventListener('mouseout', function(event){
+		  $container.firstChild.remove(); 
+		})
+	</script>
+
+		
+</body>
+</html>
